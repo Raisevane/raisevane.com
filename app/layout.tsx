@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://raisevane.vercel.app";
+const SITE_URL = "https://raisevane.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

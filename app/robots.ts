@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://raisevane.vercel.app/sitemap.xml",
+    sitemap: "https://raisevane.com/sitemap.xml",
   };
 }

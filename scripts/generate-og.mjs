@@ -43,7 +43,7 @@ const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http
   <text x="470" y="440" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" font-weight="400" fill="#8f8f96">Web · Mobile · AI · Design</text>
 
   <!-- Domain -->
-  <text x="470" y="560" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="30" font-weight="500" fill="#6b6b74">raisevane.vercel.app</text>
+  <text x="470" y="560" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="30" font-weight="500" fill="#6b6b74">raisevane.com</text>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile("public/og.png");

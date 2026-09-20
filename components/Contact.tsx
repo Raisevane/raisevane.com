@@ -55,7 +55,7 @@ export function Contact() {
     data.forEach((value, key) => {
       payload[key] = value.toString();
     });
-    payload["_subject"] = `New project inquiry — ${payload.name || "someone"} via raisevane.vercel.app`;
+    payload["_subject"] = `New project inquiry — ${payload.name || "someone"} via raisevane.com`;
     payload["_template"] = "table";
     payload["_captcha"] = "false";
 

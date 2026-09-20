@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #fafafa;
+  --neon: #ccff00;
+  --neon-soft: #d4ff4d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon: var(--neon);
+  --color-neon-soft: var(--neon-soft);
+  --font-sans: var(--font-sans-stack);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-stack), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+/* ---------------- Aurora mesh background ---------------- */
+
+.aurora-root {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050505;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+  opacity: 0.75;
+}
+
+.aurora-blue {
+  width: 55vmax;
+  height: 55vmax;
+  left: -12vmax;
+  top: -18vmax;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0) 70%);
+  animation: aurora-drift-1 26s ease-in-out infinite alternate;
+}
+
+.aurora-purple {
+  width: 48vmax;
+  height: 48vmax;
+  right: -15vmax;
+  top: 8vmax;
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.42) 0%, rgba(168, 85, 247, 0) 70%);
+  animation: aurora-drift-2 32s ease-in-out infinite alternate;
+}
+
+.aurora-pink {
+  width: 42vmax;
+  height: 42vmax;
+  left: 18vmax;
+  bottom: -20vmax;
+  background: radial-gradient(circle at center, rgba(236, 72, 153, 0.36) 0%, rgba(236, 72, 153, 0) 70%);
+  animation: aurora-drift-3 38s ease-in-out infinite alternate;
+}
+
+.aurora-teal {
+  width: 36vmax;
+  height: 36vmax;
+  right: 10vmax;
+  bottom: -12vmax;
+  background: radial-gradient(circle at center, rgba(45, 212, 191, 0.28) 0%, rgba(45, 212, 191, 0) 70%);
+  animation: aurora-drift-4 30s ease-in-out infinite alternate;
+}
+
+.aurora-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.35) 0%, rgba(5, 5, 5, 0) 20%, rgba(5, 5, 5, 0) 80%, rgba(5, 5, 5, 0.35) 100%);
+}
+
+@keyframes aurora-drift-1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(14vmax, 8vmax, 0) scale(1.15); }
+  100% { transform: translate3d(4vmax, 16vmax, 0) scale(0.95); }
+}
+@keyframes aurora-drift-2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-12vmax, 10vmax, 0) scale(1.1); }
+  100% { transform: translate3d(-6vmax, -6vmax, 0) scale(0.9); }
+}
+@keyframes aurora-drift-3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-10vmax, -10vmax, 0) scale(1.12); }
+  100% { transform: translate3d(6vmax, -4vmax, 0) scale(0.94); }
+}
+@keyframes aurora-drift-4 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-8vmax, -12vmax, 0) scale(1.08); }
+  100% { transform: translate3d(-2vmax, 6vmax, 0) scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none;
+  }
+}
+
+/* Loader used by SplineScene fallback */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(204, 255, 0, 0.25);
+  border-bottom-color: var(--neon);
+  border-radius: 50%;
+  display: inline-block;
+  animation: loader-rotation 1s linear infinite;
+}
+
+@keyframes loader-rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+::selection {
+  background: var(--neon);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}

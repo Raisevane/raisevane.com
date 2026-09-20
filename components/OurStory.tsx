@@ -53,8 +53,8 @@ export function OurStory({
 
             <div className="mt-8 grid max-w-lg grid-cols-3 gap-4">
               {[
-                { k: "40+", v: "Projects shipped" },
-                { k: "12", v: "Countries served" },
+                { k: "10+", v: "Projects shipped" },
+                { k: "2", v: "Countries served" },
                 { k: "98%", v: "Client retention" },
               ].map((s, i) => {
                 const num = parseInt(s.k, 10);
